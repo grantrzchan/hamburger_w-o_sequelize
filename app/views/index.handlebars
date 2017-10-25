@@ -1,0 +1,54 @@
+{{!-- div for burger image --}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>Eat-The-Burger!</h1>
+            <img src="hamburger.jpg" , alt="hamburger!">
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    {{!-- two divs inthe same row for to-devour and devoured-list --}}
+    <div class="row">
+        <div class="col-md-6" id="eat">
+            <ul class="devour-list">
+                <h3>To Devour</h3>
+                {{#each burgers}} {{#unless this.devoured}}
+                <li>
+                    <div class="to-eat-name">{{this.burger_name}}</div>
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="TRUE">
+                        <button type="submit">Devour it!</button>
+                    </form>
+                </li>
+                {{/unless}} {{/each}}
+            </ul>
+        </div>
+        <div class="col-md-6" id="eaten">
+            <ul class="devoured-list">
+                <h3>To Devour</h3>
+                {{#each burgers}} {{#if this.devoured}}
+                <li>
+                    <div class="eaten-name">{{this.burger_name}}</div>
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="FALSE">
+                    </form>
+                </li>
+                {{/unless}} {{/if}}
+            </ul>
+        </div>
+    </div>
+    {{!-- div for hamburger entry --}}
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {{!-- form control here --}}
+            <h3>Enter a burger you want to eat!</h3>
+            <form class="form-horizontal" action="/" method="POST">
+                <input type="text" class="form-control" name="burger_name">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

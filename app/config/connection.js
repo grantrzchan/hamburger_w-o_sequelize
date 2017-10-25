@@ -1,13 +1,16 @@
 
 //Create connection to mySQL
 const mysql = require("mysql");
+//Set up connection for production environment JawsDB
+var env = process.env.NODE_ENV || "development";
+var config = require("./config.json")[env];
 
-const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "Rvhsrzrvhs123!",
-  database: "hamburgers_db"
-});
+//Choose either production or development
+if(config.use_env_variable) {
+  var connection = mysql.createConnection(process.env[config.use_env_variable]);
+} else {
+  var connection = mysql.createConnection(config);
+}
 
 connection.connect(function(err) {
     if (err) {
