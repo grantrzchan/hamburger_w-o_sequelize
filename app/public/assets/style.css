@@ -1,0 +1,23 @@
+body{
+    background: url("http://sentimentaltrickster.com/wp-content/uploads/2016/09/Diner_Location_Background-01.png");
+    font-family: 'Lato', sans-serif;
+}
+
+.container{
+    padding: 20px;
+    border-width: 3px;
+    border-radius: 5px;
+}
+
+#eat, #eaten {
+    background: white;
+    opacity: 0.7;
+    font-family: "Arial", "sans-serif";
+    padding: 20px;
+}
+
+#entry{
+    background: white;
+    font-family: "Arial", "sans-serif";
+    padding: 20px;
+}

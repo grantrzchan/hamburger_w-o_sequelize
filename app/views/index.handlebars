@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-6" id="eaten">
             <ul class="devoured-list">
-                <h3>To Devour</h3>
+                <h3>Devoured</h3>
                 {{#each burgers}} {{#if this.devoured}}
                 <li>
                     <div class="eaten-name">{{this.burger_name}}</div>
@@ -44,7 +44,7 @@
         <div class="col-md-4">
             {{!-- form control here --}}
             <h3>Enter a burger you want to eat!</h3>
-            <form class="form-horizontal" action="/" method="POST">
+            <form class="form-horizontal" action="/" method="POST" id="entry">
                 <input type="text" class="form-control" name="burger_name">
                 <button type="submit">Submit</button>
             </form>
