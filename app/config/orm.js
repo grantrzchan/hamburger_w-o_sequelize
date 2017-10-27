@@ -4,29 +4,29 @@ const connection = require("./connection.js");
 var orm = {
 
     //orm get all burgers
-    getAllBurgers: function (tableName) {
+    getAllBurgers: function (tableName,callback) {
         var queryString = "SELECT * FROM ?? ";
-        if (err) throw err;
         connection.query(queryString, [tableName], (err, result) => {
-        return console.log(result);
+        if (err) throw err;
+        callback(result);
         })
     },
 
     //orm post one burger
-    postOneBurger: function (tableName, colName, colVal) {
+    postOneBurger: function (tableName, colName, colVal,callback) {
         var queryString = "INSERT INTO ?? (??,devoured) VALUES (?,FALSE)";
-        if (err) throw err;
         connection.query(queryString, [tableName, colName, colVal], (err, result) => {
-        return console.log(result);
+        if (err) throw err;
+        callback(result);
         })
     },
 
     //orm update one burger
-    putOneBurger: function (tableName, devVal, idVal) {
+    putOneBurger: function (tableName, devVal, idVal, callback) {
         var queryString = "UPDATE ?? SET devoured = ? WHERE id = ? ";
         connection.query(queryString, [tableName, devName, idVal], (err, result) => {
-            if (err) throw err;
-        return console.log(result);
+        if (err) throw err;
+        callback(result);
         })
     }
 

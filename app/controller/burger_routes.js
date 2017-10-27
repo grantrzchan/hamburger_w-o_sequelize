@@ -1,6 +1,6 @@
 const express = require("express");
-const burgerModel = require("./burger_model.js");
-var app = express.app();
+const burgerModel = require("../models/burger_model.js");
+var app = express();
 
 module.exports = function (app) {
 
