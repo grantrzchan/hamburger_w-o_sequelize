@@ -8,7 +8,7 @@ module.exports = function (app) {
     app.get("/", (req, res) => {
         burgerModel.findAll((data) => {
             var handlebarsData = {
-                burgers: data
+                hamburgers: res 
             };
             res.render("index", handlebarsData);
         })
