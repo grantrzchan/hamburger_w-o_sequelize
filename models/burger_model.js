@@ -3,21 +3,21 @@ const orm = require("../config/orm.js");
 
 var burgerModel = {
 
-    findAll: function(callback){
+    findAll: function(){
         orm.getAllBurgers("hamburgers",(res)=>{
-            callback(res);
+            return res;
         });
     },
 
-    postOne: function(burgNameCol,burgNameVal,callback){
+    postOne: function(burgNameCol,burgNameVal){
         orm.postOneBurger("hamburgers",burgNameCol,burgNameVal,(res)=>{
-            callback(res);
+            return res;
         });
     },
 
-    putOne: function(devBoolean,idVal,callback){
+    putOne: function(devBoolean,idVal){
         orm.putOneBurger("hamburgers",devBoolean,idVal,(res)=>{
-            callback(res);
+            return res;
         });
     }
     

@@ -7,11 +7,12 @@ module.exports = function (app) {
     //get all burgers
     app.get("/", (req, res) => {
         burgerModel.findAll((data) => {
+            console.log(data)
             var handlebarsData = {
-                hamburgers: res 
+                hamburgers: data 
             };
             res.render("index", handlebarsData);
-        })
+        });
     }); //end of get all burgers
 
     //post one burger, then redirect back to display all burgers
