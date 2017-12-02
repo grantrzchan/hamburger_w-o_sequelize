@@ -24,6 +24,7 @@ require("./controller/burger_routes.js")(app);
 
 //Serve static content from public, which is located in the app directory 
 app.use(express.static(path.join(__dirname, "public")));
+console.log(path.join(__dirname, "public"));
 app.listen(port, ()=>{
     console.log('Server started on http://localhost:' + port);
 });

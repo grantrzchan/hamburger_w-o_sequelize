@@ -26,7 +26,7 @@ var orm = {
     //orm update one burger
     putOneBurger: function (tableName, devVal, idVal, callback) {
         let queryString = "UPDATE ?? SET devoured = ? WHERE id = ? ";
-        connection.query(queryString, [tableName, devName, idVal],
+        connection.query(queryString, [tableName, devVal, idVal],
             function (err, result) {
                 if (err) throw err;
                 callback(result);

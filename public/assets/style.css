@@ -1,5 +1,5 @@
 body{
-    background: url("http://sentimentaltrickster.com/wp-content/uploads/2016/09/Diner_Location_Background-01.png");
+    /* background: url("http://sentimentaltrickster.com/wp-content/uploads/2016/09/Diner_Location_Background-01.png"); */
     font-family: 'Lato', sans-serif;
 }
 
@@ -20,4 +20,14 @@ body{
     background: white;
     font-family: "Arial", "sans-serif";
     padding: 20px;
+}
+
+#main-panel{
+    justify-content: center;
+}
+
+img{
+    height:400px;
+    width:400px;
+    justify-content: center;
 }

@@ -7,7 +7,6 @@ module.exports = function (app) {
     //get all burgers
     app.get("/", (req, res) => {
         burgerModel.findAll((data) => {
-            console.log(data)
             var handlebarsData = {
                 hamburgers: data 
             };
@@ -23,7 +22,7 @@ module.exports = function (app) {
 
     //update one burger to devoured, then redirect back to display all burgers
     app.put("/:id", (req, res) => {
-        burgerModel.putOne("TRUE", req.params.id);
+        burgerModel.putOne(1, req.params.id);
         res.redirect("/");
     }) //end of update one burger
 }

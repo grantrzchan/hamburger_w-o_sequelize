@@ -3,9 +3,9 @@ const orm = require("../config/orm.js");
 
 var burgerModel = {
 
-    findAll: function(){
+    findAll: function(callback){
         orm.getAllBurgers("hamburgers",(res)=>{
-            return res;
+            callback(res);
         });
     },
 

@@ -1,4 +1,5 @@
 DROP DATABASE IF EXISTS hamburgers_db
+CREATE DATABASE hamburgers_db
 USE hamburgers_db
 
 CREATE TABLE hamburgers
